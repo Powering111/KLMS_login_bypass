@@ -1,0 +1,33 @@
+{
+  "name": "KLMS login bypass",
+  "description": "Bypasses KLMS Login. Do not distribute!",
+  "author": "bestjun111@gmail.com",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "background":{
+    "service_worker" : "background.js"
+  },
+  "options_ui": {
+    "page": "option.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "declarativeNetRequest"
+  ],
+  "host_permissions":[
+    "*://klms.kaist.ac.kr/"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "replace_useragent",
+      "enabled": true,
+      "path": "replace_useragent.json"
+    }]
+  }
+}
